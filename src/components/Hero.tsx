@@ -1,4 +1,4 @@
-import { UserIcon } from "lucide-react";
+import { SendIcon, UserIcon } from "lucide-react";
 import { Button } from "./ui/button";
 
 export default function Hero() {
@@ -18,15 +18,12 @@ export default function Hero() {
             photo booth af fingerstache pitchfork.
           </p>
           <div className="flex justify-center space-x-3">
-            <Button className="inline-flex text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg space-x-1">
-              <UserIcon className="size-5" />
-              <p>About</p>
-            </Button>
             <Button
-              variant={"secondary"}
-              className="inline-flex text-white bg-accent border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg"
+              size={"lg"}
+              className="w-56 text-xl bg-secondary flex items-center space-x-3"
             >
-              Contact
+              <SendIcon className="size-5" />
+              <p className="tracking-wide">Contact</p>
             </Button>
           </div>
         </div>

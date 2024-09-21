@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import HoneyLogo from "../../public/honey_logo.png";
+import { Separator } from "./ui/separator";
+import { Facebook, Instagram } from "lucide-astro";
+---
+
+<footer
+  class="relative bottom-0 p-1 px-4 flex justify-between items-center bg-secondary"
+>
+  <div class="flex items-center space-x-2">
+    <Image src={HoneyLogo} width={30} alt="honey-logo-footer" />
+    <p class="font-semibold">Honey Nectar Astrology</p>
+    <Separator orientation={"vertical"} className="h-6 bg-gray-400" />
+    <p class="font-light text-gray-400">© 2024 Honey Nectar Astrology</p>
+    <a href="#" target="_blank" class="hover:scale-x-105">
+      <Facebook class="size-6" />
+    </a>
+    <a href="#" target="_blank" class="hover:scale-x-105">
+      <Instagram class="size-6" />
+    </a>
+  </div>
+  <div class="flex items-center space-x-2">
+    <p>Buit by</p>
+    <a
+      href="https://www.hectororopesa.com"
+      target="_blank"
+      class="font-semibold underline underline-offset-4"
+    >
+      Hector Oropesa
+    </a>
+  </div>
+</footer>
