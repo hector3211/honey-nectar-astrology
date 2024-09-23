@@ -3,11 +3,11 @@ import { Button } from "./ui/button";
 
 export default function Hero() {
   return (
-    <section className="text-gray-600 body-font bg-gradient-to-br from-secondary via-primary to-accent">
+    <section className="body-font">
       <div className="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
         <img width={350} src={"/honey_logo.png"} alt="honey-hero" />
         <div className="text-center lg:w-2/3 w-full">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+          <h1 className="title-font text-5xl mb-4 font-semibold text-transparent bg-gradient-to-br from-secondary via-primary to-accent  bg-clip-text py-3">
             Microdosing synth tattooed vexillologist
           </h1>
           <p className="mb-8 leading-relaxed">
@@ -20,7 +20,7 @@ export default function Hero() {
           <div className="flex justify-center space-x-3">
             <Button
               size={"lg"}
-              className="w-56 text-xl bg-secondary flex items-center space-x-3"
+              className="bg-secondary hover:bg-secondary hover:bg-opacity-95 w-56 text-xl flex items-center space-x-3"
             >
               <SendIcon className="size-5" />
               <p className="tracking-wide">Contact</p>
