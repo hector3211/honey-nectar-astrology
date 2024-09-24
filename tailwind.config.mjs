@@ -9,6 +9,9 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      dropShadow: {
+        "custom-black": "0 1.2px 1.2px #00000080", // Hex code with opacity converted to rgba
+      },
       colors: {
         primary: "#BF725E",
         secondary: "#784D5D",
