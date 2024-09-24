@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@/styles/global.css";
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero.astro";
+import About from "@/components/About.astro";
 import Features from "@/components/Features.astro";
 import Reviews from "@/components/Reviews.astro";
 ---
@@ -9,6 +10,7 @@ import Reviews from "@/components/Reviews.astro";
 <Layout title="Welcome to Astro.">
   <main class="">
     <Hero />
+    <About />
     <Features />
     <Reviews />
   </main>
