@@ -19,8 +19,8 @@ import Footer from "@/components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="max-w-full min-h-screen">
-    <NavBar />
+  <body class="max-w-7xl mx-auto min-h-screen">
+    <NavBar client:load />
     <slot />
     <Footer />
   </body>
