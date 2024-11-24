@@ -1,8 +1,18 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
-<section id="packages" class="my-20 body-font text-zinc-600">
+<section id="packages" class="my-20 body-font text-zinc-600 relative">
+  <div
+    class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-bottom-80 -right-[500px]"
+    aria-hidden="true"
+  >
+    <div
+      class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-secondary via-accent to-purple-800 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+    >
+    </div>
+  </div>
   <div class="container px-5 py-5 sm:py-24 mx-auto">
     <div class="flex flex-wrap w-full mb-20">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -20,14 +30,16 @@
         ugh squid celiac humblebrag.
       </p>
     </div>
-    <div class="flex flex-col items-center lg:flex-row lg:flex-wrap -m-4">
-      <div class="xl:w-2/6 md:w-3/4 w-full p-4">
+    <div class="flex flex-col items-center md:flex-row md:space-x-5">
+      <div class="md:container lg:min-h-[40rem] w-full">
         <div
-          class="text-gray-700 shadow-lg shadow-primary p-6 rounded-md lg:h-[36rem]"
+          class="text-gray-700 shadow-lg shadow-accent p-6 rounded-md lg:h-[39rem]"
         >
-          <img
-            class="h-48 rounded w-full object-cover object-center mb-6"
-            src="https://dummyimage.com/721x401"
+          <Image
+            width={200}
+            height={200}
+            class="h-56 rounded w-full object-cover object-center mb-6"
+            src={"/first-package.jpg"}
             alt="content"
           />
           <h2 class="text-lg text-zinc-900 font-medium title-font mb-4">
@@ -43,13 +55,15 @@
           </p>
         </div>
       </div>
-      <div class="xl:w-2/6 md:w-3/4 lg:min-h-[40rem] w-full p-4">
+      <div class="md:container lg:min-h-[40rem] w-full">
         <div
-          class="text-gray-700 shadow-lg shadow-primary p-6 rounded-md lg:h-[36rem]"
+          class="text-gray-700 shadow-lg shadow-primary p-6 rounded-md lg:h-[38rem]"
         >
-          <img
-            class="h-48 rounded w-full object-cover object-center mb-6"
-            src="https://dummyimage.com/721x401"
+          <Image
+            width={200}
+            height={200}
+            class="h-56 rounded w-full object-cover object-top mb-6"
+            src={"/second-package.jpg"}
             alt="content"
           />
           <h2 class="text-lg text-zinc-900 font-medium title-font mb-4">
@@ -66,14 +80,16 @@
           </p>
         </div>
       </div>
-      <div class="xl:w-2/6 md:w-3/4 w-full p-4">
+      <div class="md:container lg:min-h-[40rem] w-full">
         <div
-          class="text-gray-700 shadow-lg shadow-primary p-6 rounded-md lg:h-[36rem]"
+          class="text-gray-700 shadow-lg shadow-secondary p-6 rounded-md lg:h-[39rem]"
         >
-          <img
-            class="h-48 rounded w-full object-cover object-center mb-6"
-            src="https://dummyimage.com/721x401"
-            alt="content"
+          <Image
+            width={200}
+            height={200}
+            class="h-56 rounded w-full object-cover object-bottom mb-6"
+            src={"/third-package.jpg"}
+            alt="third-package image"
           />
           <h2 class="text-lg text-zinc-900 font-medium title-font mb-4">
             Soul Essence Transformation

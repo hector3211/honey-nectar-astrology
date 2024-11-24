@@ -1,5 +1,5 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
 <section id="about" class="my-20 text-zinc-600 body-font scroll-mt-52">
@@ -15,12 +15,12 @@
     <div
       class="flex flex-col lg:flex-row justify-center items-center lg:space-x-32"
     >
-      <img
-        src="/nina.jpeg"
-        width={180}
-        height={180}
+      <Image
+        width={250}
+        height={250}
+        src="/nina-heart.png"
         alt="nina image"
-        class="object-cover rounded-full"
+        class="object-cover rounded-xl shadow shadow-primary"
       />
       <div
         class="text-lg text-justify max-w-lg leading-snug text-balance text-gray-700"

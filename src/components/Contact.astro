@@ -1,9 +1,9 @@
 ---
 import { Button } from "./ui/button";
-import { Send } from "lucide-astro";
+import { SendHorizonal } from "lucide-astro";
 ---
 
-<section id="contact" class="text-zinc-600 body-font relative my-20">
+<section id="contact" class="text-zinc-500 body-font relative py-20">
   <div class="container px-5 py-5 sm:py-24 mx-auto">
     <div class="lg:w-1/2 w-full mb-6 lg:mb-20">
       <h1
@@ -21,7 +21,7 @@ import { Send } from "lucide-astro";
         Reach out to me with any questions or inquiries.
       </p>
     </div>
-    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+    <div class="w-full md:max-w-md lg:max-w-4xl mx-auto">
       <form method="POST" class="flex flex-col md:flex-row flex-wrap -m-2">
         <div class="p-2 w-full md:w-1/2">
           <div class="relative">
@@ -66,9 +66,9 @@ import { Send } from "lucide-astro";
           </div>
         </div>
         <div class="p-2 w-full">
-          <Button className="flex mx-auto w-36 space-x-2">
-            <Send class="size-4 sm:size-5" />
+          <Button className="flex mx-auto w-36 space-x-5">
             <p class="text-md sm:text-lg">Send</p>
+            <SendHorizonal class="size-4 sm:size-5" />
           </Button>
         </div>
       </form>
