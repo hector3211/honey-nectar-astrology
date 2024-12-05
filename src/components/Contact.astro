@@ -1,6 +1,6 @@
 ---
+import { Send } from "lucide-react";
 import { Button } from "./ui/button";
-import { SendHorizonal } from "lucide-astro";
 ---
 
 <section id="contact" class="text-zinc-500 body-font relative py-20">
@@ -67,8 +67,8 @@ import { SendHorizonal } from "lucide-astro";
         </div>
         <div class="p-2 w-full">
           <Button className="flex mx-auto w-36 space-x-5">
+            <Send className="size-4 sm:size-5" />
             <p class="text-md sm:text-lg">Send</p>
-            <SendHorizonal class="size-4 sm:size-5" />
           </Button>
         </div>
       </form>
