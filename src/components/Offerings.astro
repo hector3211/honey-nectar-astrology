@@ -10,6 +10,9 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import { Sparkles } from "lucide-react";
+import FirstPackage from "@/assets/first-package.jpg";
+import SecondPackage from "@/assets/second-package.jpg";
+import ThirdPackage from "@/assets/third-package.jpg";
 ---
 
 <section id="packages" class="relative my-20 body-font text-zinc-600">
@@ -34,10 +37,8 @@ import { Sparkles } from "lucide-react";
         <div class="h-1 w-20 bg-accent rounded"></div>
       </div>
     </div>
-    <div
-      class="flex flex-col space-y-8 md:space-y-0 items-center md:flex-row md:space-x-5"
-    >
-      <Card>
+    <div class="flex flex-col space-y-8 items-center lg:flex-row lg:space-x-5">
+      <Card className="max-w-[450px]">
         <CardHeader>
           <CardTitle>Honeycomb Clarity Session</CardTitle>
           <CardDescription className="leading-relaxed text-base text-justify">
@@ -49,23 +50,28 @@ import { Sparkles } from "lucide-react";
             authentic self and move forward with confidence.
           </CardDescription>
         </CardHeader>
-        <CardContent className="md:container w-full">
+        <CardContent className="container">
           <Image
             width={200}
             height={200}
-            class="h-56 rounded w-full object-cover"
-            src={"/first-package.jpg"}
+            widths={[150, 250, 400, 600]}
+            class="h-56 rounded container object-cover"
+            src={FirstPackage}
             alt="content"
           />
         </CardContent>
         <CardFooter>
-          <Button>
+          <Button
+            key={1}
+            className="book-button"
+            data-package="honeycomb-clarity"
+          >
             <Sparkles />
             Book Now
           </Button>
         </CardFooter>
       </Card>
-      <Card>
+      <Card className="max-w-[450px]">
         <CardHeader>
           <CardTitle>
             Nectar of Healing: Ancestral & Past Life Unraveling
@@ -80,23 +86,28 @@ import { Sparkles } from "lucide-react";
             empowerment.
           </CardDescription>
         </CardHeader>
-        <CardContent className="md:container w-full">
+        <CardContent className="container">
           <Image
-            width={200}
-            height={200}
-            class="h-56 rounded w-full object-cover object-top"
-            src={"/second-package.jpg"}
+            width={400}
+            height={400}
+            widths={[150, 250, 400]}
+            class="h-56 container rounded object-cover object-top"
+            src={SecondPackage}
             alt="content"
           />
         </CardContent>
         <CardFooter>
-          <Button>
+          <Button
+            key={2}
+            className="book-button"
+            data-package="nectar-of-healing"
+          >
             <Sparkles />
             Book Now
           </Button>
         </CardFooter>
       </Card>
-      <Card>
+      <Card className="max-w-[450px]">
         <CardHeader>
           <CardTitle>Soul Essence Transformation</CardTitle>
           <CardDescription className="leading-relaxed text-base text-justify">
@@ -109,17 +120,22 @@ import { Sparkles } from "lucide-react";
             soul’s evolution and fully bloom.
           </CardDescription>
         </CardHeader>
-        <CardContent className="md:container w-full">
+        <CardContent className="container">
           <Image
             width={200}
             height={200}
+            widths={[150, 250, 400, 600]}
             class="h-56 rounded w-full object-cover object-bottom"
-            src={"/third-package.jpg"}
+            src={ThirdPackage}
             alt="third-package image"
           />
         </CardContent>
         <CardFooter>
-          <Button>
+          <Button
+            key={3}
+            className="book-button"
+            data-package="soul-essence-transformation"
+          >
             <Sparkles />
             Book Now
           </Button>
@@ -128,3 +144,17 @@ import { Sparkles } from "lucide-react";
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const bookButtons = document.querySelectorAll(".book-button");
+
+    bookButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const packageName = button.getAttribute("data-package");
+        document.cookie = `selectedPackage=${packageName}; path=/; SameSite=Strict; Secure`;
+        window.location.reload();
+      });
+    });
+  });
+</script>

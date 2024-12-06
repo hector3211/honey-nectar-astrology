@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +9,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "sonner";
+import { Loader2, Send } from "lucide-react";
+
+function getCookie(name: string): string | null {
+  const cookies = document.cookie.split("; ");
+
+  for (const cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.split("=");
+
+    if (cookieName === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+
+  return null;
+}
+
+// Utility function to set cookie
+function setCookie(name: string, value: string, days = 7) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Strict; Secure`;
+}
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -16,22 +38,57 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [selectedPackage, setSelectedPackage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+    setResponseMessage(""); // Clear previous messages
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log({ name, email, message, selectedPackage });
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      const response = await fetch("/api/offering", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      const data = await response.json();
+      if (data.message) {
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSelectedPackage("");
+        setResponseMessage(data.message);
+        toast.success(data.message);
+      }
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
+      setResponseMessage("Something went wrong. Please try again.");
+      toast.error(errorMessage);
+    } finally {
       setIsSubmitting(false);
-      // Reset form fields
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSelectedPackage("");
-    }, 2000);
-  };
+    }
+  }
+
+  useEffect(() => {
+    const packageFromCookie = getCookie("selectedPackage");
+    if (packageFromCookie) {
+      setSelectedPackage(packageFromCookie);
+    }
+  }, []);
+
+  useEffect(() => {
+    const packageFromCookie = getCookie("selectedPackage");
+    if (packageFromCookie !== selectedPackage) {
+      setCookie("selectedPackage", selectedPackage);
+      return;
+    }
+  }, [selectedPackage, setSelectedPackage]);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full p-3">
@@ -53,6 +110,7 @@ export default function ContactForm() {
         </label>
         <Input
           id="name"
+          name="name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -69,6 +127,7 @@ export default function ContactForm() {
         </label>
         <Input
           id="email"
+          name="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -85,6 +144,7 @@ export default function ContactForm() {
         </label>
         <Textarea
           id="message"
+          name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Your message here..."
@@ -93,25 +153,38 @@ export default function ContactForm() {
       </div>
       <div>
         <label
-          htmlFor="package"
+          htmlFor="selectedPackage"
           className="block text-sm font-medium text-gray-700"
         >
           Package
         </label>
-        <Select value={selectedPackage} onValueChange={setSelectedPackage}>
-          <SelectTrigger id="package">
+        <Select
+          value={selectedPackage}
+          onValueChange={setSelectedPackage}
+          name="selectedPackage"
+        >
+          <SelectTrigger id="selectedPackage">
             <SelectValue placeholder="Select a package" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="first">Honeycomb Clarity Session</SelectItem>
-            <SelectItem value="second">
+            <SelectItem value="honeycomb-clarity">
+              Honeycomb Clarity Session
+            </SelectItem>
+            <SelectItem value="nectar-of-healing">
               Nectar of Healing: Ancestral & Past Life Unraveling
             </SelectItem>
-            <SelectItem value="third">Soul Essence Transformation</SelectItem>
+            <SelectItem value="soul-essence-transformation">
+              Soul Essence Transformation
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        className="w-full lg:text-lg"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? <Loader2 className="animate-spin" /> : <Send />}
         {isSubmitting ? "Submitting..." : "Submit"}
       </Button>
     </form>
