@@ -1,8 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import First from "../assets/first-package.jpg";
-import Second from "../assets/second-package.jpg";
-import Third from "../assets/third-package.jpg";
 import {
   Card,
   CardContent,
@@ -37,7 +34,9 @@ import { Sparkles } from "lucide-react";
         <div class="h-1 w-20 bg-accent rounded"></div>
       </div>
     </div>
-    <div class="flex flex-col items-center md:flex-row md:space-x-5">
+    <div
+      class="flex flex-col space-y-8 md:space-y-0 items-center md:flex-row md:space-x-5"
+    >
       <Card>
         <CardHeader>
           <CardTitle>Honeycomb Clarity Session</CardTitle>
@@ -50,12 +49,12 @@ import { Sparkles } from "lucide-react";
             authentic self and move forward with confidence.
           </CardDescription>
         </CardHeader>
-        <CardContent className="w-full">
+        <CardContent className="md:container w-full">
           <Image
             width={200}
             height={200}
             class="h-56 rounded w-full object-cover"
-            src={First}
+            src={"/first-package.jpg"}
             alt="content"
           />
         </CardContent>
@@ -86,7 +85,7 @@ import { Sparkles } from "lucide-react";
             width={200}
             height={200}
             class="h-56 rounded w-full object-cover object-top"
-            src={Second}
+            src={"/second-package.jpg"}
             alt="content"
           />
         </CardContent>
@@ -110,12 +109,12 @@ import { Sparkles } from "lucide-react";
             soul’s evolution and fully bloom.
           </CardDescription>
         </CardHeader>
-        <CardContent className="w-full">
+        <CardContent className="md:container w-full">
           <Image
             width={200}
             height={200}
             class="h-56 rounded w-full object-cover object-bottom"
-            src={Third}
+            src={"/third-package.jpg"}
             alt="third-package image"
           />
         </CardContent>

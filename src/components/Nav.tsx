@@ -28,8 +28,8 @@ export default function Navbar() {
               <img
                 width={40}
                 height={40}
-                src={"../assets/honey_logo.png"}
-                alt="honey-astrology-logo"
+                src={"/honey_logo.png"}
+                alt="honey-logo"
               />
               <h3 className="font-bold text-xl md:text-2xl  bg-gradient-to-br from-primary to-secondary  text-transparent bg-clip-text">
                 Honey Nectar Astrology
@@ -48,7 +48,7 @@ export default function Navbar() {
                     >
                       <img
                         width={"40"}
-                        src={"../assets/bee-icon-tansparent.png"}
+                        src={"/bee-icon-tansparent.png"}
                         alt="bee-icon"
                       />
                       <p>{item.name}</p>
