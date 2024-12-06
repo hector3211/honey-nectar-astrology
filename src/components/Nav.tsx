@@ -31,7 +31,7 @@ export default function Navbar() {
                 src={"/honey_logo.png"}
                 alt="honey-astrology-logo"
               />
-              <h3 className="font-bold text-xl md:text-2xl  bg-gradient-to-br from-primary to-accent  text-transparent bg-clip-text">
+              <h3 className="font-bold text-xl md:text-2xl  bg-gradient-to-br from-primary to-secondary  text-transparent bg-clip-text">
                 Honey Nectar Astrology
               </h3>
             </a>

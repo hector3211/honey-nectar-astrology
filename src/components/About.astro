@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import Nina from "@/assets/nina-heart.png";
 ---
 
 <section id="about" class="my-20 text-zinc-600 body-font scroll-mt-52">
   <div class="container px-5 py-5 sm:py-24 mx-auto">
     <div class="w-full mb-6 lg:mb-20">
       <h1
-        class="sm:text-4xl text-2xl tracking-tight font-semibold title-font mb-2 text-gray-900"
+        class="sm:text-5xl text-2xl tracking-tight font-bold title-font mb-2 text-gray-900"
       >
         About
       </h1>
@@ -16,11 +17,11 @@ import { Image } from "astro:assets";
       class="flex flex-col lg:flex-row justify-center items-center lg:space-x-32"
     >
       <Image
-        width={250}
-        height={250}
-        src="/nina-heart.png"
+        width={400}
+        height={400}
+        src={Nina}
         alt="nina image"
-        class="object-cover rounded-xl shadow shadow-primary"
+        class="object-cover rounded-xl shadow-lg shadow-primary"
       />
       <div
         class="text-lg text-justify max-w-lg leading-snug text-balance text-gray-700"

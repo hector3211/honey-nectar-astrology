@@ -1,8 +1,19 @@
 ---
 import { Image } from "astro:assets";
+import HoneyBee from "../assets/honey-bee.svg";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Sparkles } from "lucide-react";
 ---
 
-<section id="packages" class="my-20 body-font text-zinc-600 relative">
+<section id="packages" class="relative my-20 body-font text-zinc-600">
   <div
     class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-bottom-80 -left-[500px]"
     aria-hidden="true"
@@ -17,59 +28,48 @@ import { Image } from "astro:assets";
     <div class="flex flex-wrap w-full mb-20">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
         <h1
-          class="sm:text-4xl text-2xl font-semibold title-font mb-2 text-zinc-900"
+          class="sm:text-5xl text-2xl font-bold title-font mb-2 text-zinc-900"
         >
           Offerings✨
         </h1>
         <div class="h-1 w-20 bg-accent rounded"></div>
       </div>
-      <p class="lg:w-1/2 w-full font-light leading-relaxed">
-        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-        gentrify, subway tile poke farm-to-table. Franzen you probably haven't
-        heard of them man bun deep jianbing selfies heirloom prism food truck
-        ugh squid celiac humblebrag.
-      </p>
     </div>
     <div class="flex flex-col items-center md:flex-row md:space-x-5">
-      <div class="md:container lg:min-h-[40rem] w-full">
-        <div
-          class="text-gray-700 shadow-lg shadow-accent p-6 rounded-md lg:h-[39rem]"
-        >
-          <Image
-            width={200}
-            height={200}
-            class="h-56 rounded w-full object-cover object-center mb-6"
-            src={"/first-package.jpg"}
-            alt="content"
-          />
-          <h2 class="text-lg text-zinc-900 font-bold title-font mb-4">
-            Honeycomb Clarity Session
-          </h2>
-          <p class="leading-relaxed text-base">
+      <Card>
+        <CardHeader>
+          <CardTitle>Honeycomb Clarity Session</CardTitle>
+          <CardDescription className="leading-relaxed text-base text-justify">
             Like a bee gathering nectar, this session uncovers the essence of
             your soul’s path. Through an in-depth exploration of your birth
             chart, I’ll reveal the patterns that influence your life purpose and
             current challenges. Perfect for gaining clarity and direction, this
             session offers you the sweet insight needed to realign with your
             authentic self and move forward with confidence.
-          </p>
-        </div>
-      </div>
-      <div class="md:container lg:min-h-[40rem] w-full">
-        <div
-          class="text-gray-700 shadow-lg shadow-primary p-6 rounded-md lg:h-[38rem]"
-        >
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="w-full">
           <Image
             width={200}
             height={200}
-            class="h-56 rounded w-full object-cover object-top mb-6"
-            src={"/second-package.jpg"}
+            class="h-56 rounded w-full object-cover"
+            src={"/first-package.jpg"}
             alt="content"
           />
-          <h2 class="text-lg text-zinc-900 font-bold title-font mb-4">
+        </CardContent>
+        <CardFooter>
+          <Button>
+            <Sparkles />
+            Book Now
+          </Button>
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>
             Nectar of Healing: Ancestral & Past Life Unraveling
-          </h2>
-          <p class="leading-relaxed text-base">
+          </CardTitle>
+          <CardDescription className="leading-relaxed text-base text-justify">
             This package delves into the honeyed layers of your soul’s history,
             addressing the unresolved issues from past lives and familial
             traumas that have carried into this one. Using your natal chart,
@@ -77,24 +77,28 @@ import { Image } from "astro:assets";
             healing needed to release karmic cycles and embrace inner freedom.
             Emerge renewed, having tasted the nectar of emotional healing and
             empowerment.
-          </p>
-        </div>
-      </div>
-      <div class="md:container lg:min-h-[40rem] w-full">
-        <div
-          class="text-gray-700 shadow-lg shadow-secondary p-6 rounded-md lg:h-[39rem]"
-        >
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="md:container w-full">
           <Image
             width={200}
             height={200}
-            class="h-56 rounded w-full object-cover object-bottom mb-6"
-            src={"/third-package.jpg"}
-            alt="third-package image"
+            class="h-56 rounded w-full object-cover object-top"
+            src={"/second-package.jpg"}
+            alt="content"
           />
-          <h2 class="text-lg text-zinc-900 font-bold title-font mb-4">
-            Soul Essence Transformation
-          </h2>
-          <p class="leading-relaxed text-base">
+        </CardContent>
+        <CardFooter>
+          <Button>
+            <Sparkles />
+            Book Now
+          </Button>
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Soul Essence Transformation</CardTitle>
+          <CardDescription className="leading-relaxed text-base text-justify">
             This immersive journey is designed to connect you with the essence
             of your soul’s nectar—your purest potential. We’ll analyze your
             progressed chart to understand how past life energies and current
@@ -102,9 +106,24 @@ import { Image } from "astro:assets";
             imprints and limitations, this package guides you toward releasing
             what no longer serves you, allowing you to flow naturally into your
             soul’s evolution and fully bloom.
-          </p>
-        </div>
-      </div>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="w-full">
+          <Image
+            width={200}
+            height={200}
+            class="h-56 rounded w-full object-cover object-bottom"
+            src={"/third-package.jpg"}
+            alt="third-package image"
+          />
+        </CardContent>
+        <CardFooter>
+          <Button>
+            <Sparkles />
+            Book Now
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   </div>
 </section>
