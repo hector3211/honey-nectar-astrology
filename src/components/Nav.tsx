@@ -28,7 +28,7 @@ export default function Navbar() {
               <img
                 width={40}
                 height={40}
-                src={"/honey_logo.png"}
+                src={"../assets/honey_logo.png"}
                 alt="honey-astrology-logo"
               />
               <h3 className="font-bold text-xl md:text-2xl  bg-gradient-to-br from-primary to-secondary  text-transparent bg-clip-text">
@@ -48,7 +48,7 @@ export default function Navbar() {
                     >
                       <img
                         width={"40"}
-                        src={"/bee-icon-tansparent.png"}
+                        src={"../assets/bee-icon-tansparent.png"}
                         alt="bee-icon"
                       />
                       <p>{item.name}</p>
