@@ -38,109 +38,76 @@ import ThirdPackage from "@/assets/third-package.jpg";
       </div>
     </div>
     <div class="flex flex-col space-y-8 items-center lg:flex-row lg:space-x-5">
-      <Card className="max-w-[450px]">
-        <CardHeader>
-          <CardTitle>Honeycomb Clarity Session</CardTitle>
-          <CardDescription className="leading-relaxed text-base text-justify">
-            Like a bee gathering nectar, this session uncovers the essence of
+      {
+        [
+          {
+            key: "honeycomb-clarity",
+            title: "Honeycomb Clarity Session",
+            description: `Like a bee gathering nectar, this session uncovers the essence of
             your soul’s path. Through an in-depth exploration of your birth
             chart, I’ll reveal the patterns that influence your life purpose and
             current challenges. Perfect for gaining clarity and direction, this
             session offers you the sweet insight needed to realign with your
-            authentic self and move forward with confidence.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="container">
-          <Image
-            width={200}
-            height={200}
-            widths={[150, 250, 400, 600]}
-            class="h-56 rounded container object-cover"
-            src={FirstPackage}
-            alt="content"
-          />
-        </CardContent>
-        <CardFooter>
-          <Button
-            key={1}
-            className="book-button"
-            data-package="honeycomb-clarity"
-          >
-            <Sparkles />
-            Book Now
-          </Button>
-        </CardFooter>
-      </Card>
-      <Card className="max-w-[450px]">
-        <CardHeader>
-          <CardTitle>
-            Nectar of Healing: Ancestral & Past Life Unraveling
-          </CardTitle>
-          <CardDescription className="leading-relaxed text-base text-justify">
-            This package delves into the honeyed layers of your soul’s history,
+            authentic self and move forward with confidence.`,
+            src: FirstPackage,
+            alt: "content",
+            dataPackage: "honeycomb-clarity",
+          },
+          {
+            key: "nectar-of-healing",
+            title: "Nectar of Healing: Ancestral & Past Life Unraveling",
+            description: `This package delves into the honeyed layers of your soul’s history,
             addressing the unresolved issues from past lives and familial
             traumas that have carried into this one. Using your natal chart,
             I’ll help you unravel these deep-rooted patterns and find the
             healing needed to release karmic cycles and embrace inner freedom.
             Emerge renewed, having tasted the nectar of emotional healing and
-            empowerment.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="container">
-          <Image
-            width={400}
-            height={400}
-            widths={[150, 250, 400]}
-            class="h-56 container rounded object-cover object-top"
-            src={SecondPackage}
-            alt="content"
-          />
-        </CardContent>
-        <CardFooter>
-          <Button
-            key={2}
-            className="book-button"
-            data-package="nectar-of-healing"
-          >
-            <Sparkles />
-            Book Now
-          </Button>
-        </CardFooter>
-      </Card>
-      <Card className="max-w-[450px]">
-        <CardHeader>
-          <CardTitle>Soul Essence Transformation</CardTitle>
-          <CardDescription className="leading-relaxed text-base text-justify">
-            This immersive journey is designed to connect you with the essence
+            empowerment.`,
+            src: SecondPackage,
+            alt: "content",
+            dataPackage: "nectar-of-healing",
+          },
+          {
+            key: "soul-essence-transformation",
+            title: "Soul Essence Transformation",
+            description: `This immersive journey is designed to connect you with the essence
             of your soul’s nectar—your purest potential. We’ll analyze your
             progressed chart to understand how past life energies and current
             planetary influences are shaping your evolution. By addressing
             imprints and limitations, this package guides you toward releasing
             what no longer serves you, allowing you to flow naturally into your
-            soul’s evolution and fully bloom.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="container">
-          <Image
-            width={200}
-            height={200}
-            widths={[150, 250, 400, 600]}
-            class="h-56 rounded w-full object-cover object-bottom"
-            src={ThirdPackage}
-            alt="third-package image"
-          />
-        </CardContent>
-        <CardFooter>
-          <Button
-            key={3}
-            className="book-button"
-            data-package="soul-essence-transformation"
-          >
-            <Sparkles />
-            Book Now
-          </Button>
-        </CardFooter>
-      </Card>
+            soul’s evolution and fully bloom.`,
+            src: ThirdPackage,
+            alt: "third-package image",
+            dataPackage: "soul-essence-transformation",
+          },
+        ].map((pkg) => (
+          <Card className="max-w-[450px]" key={pkg.key}>
+            <CardHeader>
+              <CardTitle>{pkg.title}</CardTitle>
+              <CardDescription className="leading-relaxed text-base text-justify">
+                {pkg.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="container">
+              <Image
+                width={200}
+                height={200}
+                widths={[150, 250, 400, 600]}
+                class={`h-56 rounded container ${pkg.title === "Honeycomb Clarity Session" ? "object-center" : "object-bottom"} object-cover`}
+                src={pkg.src}
+                alt={pkg.alt}
+              />
+            </CardContent>
+            <CardFooter>
+              <Button className="book-button" data-package={pkg.dataPackage}>
+                <Sparkles />
+                Book Now
+              </Button>
+            </CardFooter>
+          </Card>
+        ))
+      }
     </div>
   </div>
 </section>
