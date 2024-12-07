@@ -13,20 +13,12 @@ import Brittany from "@/assets/brittney.jpeg";
       </h1>
       <div class="h-1 w-20 bg-primary rounded"></div>
     </div>
-    <div class="grid grid-cols-2 -m-4">
-      <div class="col-span-2 md:col-span-1 p-4 text-gray-700">
-        <div class="h-full p-8 rounded-md shadow-md">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="block w-5 h-5 text-gray-400 mb-4"
-            viewBox="0 0 975.036 975.036"
-          >
-            <path
-              d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"
-            ></path>
-          </svg>
-          <p class="leading-relaxed mb-6 md:min-h-[13rem]">
+    <div class="grid grid-cols-2 -m-4 gap-3">
+      {
+        [
+          {
+            name: "Morgana",
+            review: `
             Let me start by saying I was not sure what to expect. I have had
             readings before, but never my chart read. What an awesome and
             intense experience. Nina is extremely gifted and sensitive when
@@ -34,38 +26,14 @@ import Brittany from "@/assets/brittney.jpeg";
             experienced and was able to provide explanations as to why they
             happened. I’m still trying to soak in the time I spent with her. She
             is a sweet and skilled reader. I will be going back to her and
-            sharing her info with my friends and clients. She’s legit.
-          </p>
-          <a class="inline-flex items-center">
-            <Image
-              width={80}
-              height={80}
-              src={Morgana}
-              alt="first review"
-              class={"rounded-xl"}
-            />
-            <span class="flex-grow flex flex-col pl-4">
-              <span class="title-font font-medium text-gray-700">Morgana</span>
-              <span class="text-gray-400 text-sm">Licensed Esthetician</span>
-            </span>
-          </a>
-        </div>
-      </div>
-      <div
-        class="col-span-2 md:col-span-1 space-y-3 md:space-y-0 p-4 text-gray-700"
-      >
-        <div class="h-full p-8 rounded-md shadow-md">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="block w-5 h-5 text-gray-400 mb-4"
-            viewBox="0 0 975.036 975.036"
-          >
-            <path
-              d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"
-            ></path>
-          </svg>
-          <p class="leading-relaxed mb-6 md:min-h-[13rem]">
+            sharing her info with my friends and clients. She’s legit.`,
+            work: "Licensed Esthetician",
+            src: Morgana,
+            alt: "Morgana image",
+          },
+          {
+            name: "Emma",
+            review: `
             Nina helped me understand bits and pieces of information about
             myself that I have been confused about for a long time. It’s crazy
             to think that reading into charts and learning about the stars the
@@ -75,36 +43,14 @@ import Brittany from "@/assets/brittney.jpeg";
             I have been dealing with. Overall, I felt pretty lucky and more
             excited for the path that I am on. That’s just my chart though, not
             to brag :) You will have to book a session with her to find out your
-            path & answer questions about your past
-          </p>
-          <a class="inline-flex items-center">
-            <Image
-              width={80}
-              height={80}
-              src={Emma}
-              alt="second review"
-              class={"rounded-xl"}
-            />
-            <span class="flex-grow flex flex-col pl-4">
-              <span class="title-font font-medium text-gray-700">Emma</span>
-              <span class="text-gray-400 text-sm">Marketing specialist</span>
-            </span>
-          </a>
-        </div>
-      </div>
-      <div class="col-span-2 p-4 text-gray-700">
-        <div class="h-full shadow-md p-8 rounded-md backdrop-blur-sm">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="block w-5 h-5 text-gray-400 mb-4"
-            viewBox="0 0 975.036 975.036"
-          >
-            <path
-              d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"
-            ></path>
-          </svg>
-          <p class="leading-relaxed mb-6">
+            path & answer questions about your past.`,
+            work: "Marketing specialist",
+            src: Emma,
+            alt: "Emma image",
+          },
+          {
+            name: "Brittany",
+            review: `
             Sitting with Nina is like the best therapy session you’ve ever had,
             where you uncover important insights about yourself and your place
             in the world. I had such an incredible experience that I asked her
@@ -115,25 +61,55 @@ import Brittany from "@/assets/brittney.jpeg";
             partner. I was always interested in astrology before but never
             really understood it and had no idea how deep it can go. Nina did a
             great job explaining every aspect of our charts and relating it who
-            we are. I highly recommend doing an astrology reading with her!
-          </p>
-          <a class="inline-flex items-center">
-            <Image
-              width={80}
-              height={80}
-              src={Brittany}
-              alt="second review"
-              class={"rounded-xl"}
-            />
-            <span class="flex-grow flex flex-col pl-4">
-              <span class="title-font font-medium text-gray-700">Brittany</span>
-              <span class="text-gray-400 text-sm"
-                >SalesForce Cloud Architect</span
-              >
+            we are. I highly recommend doing an astrology reading with her!`,
+            work: "SalesForce Cloud Architect",
+            src: Brittany,
+            alt: "Brittany image",
+          },
+          {
+            name: "Ammy",
+            review: `Nina weaves her healing gifts along with her psychological and spiritual wisdom and understanding of archetypes into all her astrology readings.  Book a reading with Nina if you want  explore your inner world and heal whatever is holding you back from finding more love, happiness and creative self expression in your life.  Nina is compassionate, integral and very intuitive and insightful. She'll help you feel more empowered to move forward in life in the way you want!`,
+            work: "Spiritual Advisor",
+            src: Brittany,
+            alt: "Ammy image",
+          },
+        ].map((testimonial) => (
+          <div class="col-span-1 h-full p-8 rounded-md shadow-md">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="block w-5 h-5 text-gray-400 mb-4"
+              viewBox="0 0 975.036 975.036"
+            >
+              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z" />
+            </svg>
+            <p class="leading-relaxed mb-6 md:min-h-[13rem]">
+              {testimonial.review}
+            </p>
+
+            <span class="inline-flex items-center">
+              {testimonial.name !== "Ammy" ? (
+                <Image
+                  width={80}
+                  height={80}
+                  widths={[40, 60, 80, 100]}
+                  src={testimonial.src!!}
+                  alt={testimonial.alt}
+                  class={"rounded-xl"}
+                />
+              ) : (
+                <p class="size-[60px] text-3xl">🌹</p>
+              )}
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-700">
+                  {testimonial.name}
+                </span>
+                <span class="text-gray-400 text-sm">{testimonial.work}</span>
+              </span>
             </span>
-          </a>
-        </div>
-      </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
