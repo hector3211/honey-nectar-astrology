@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Nina from "@/assets/nina-heart.png";
+import PinkCloud from "@/assets/pink-cloud.svg";
 ---
 
 <section id="about" class="my-20 text-zinc-600 body-font scroll-mt-52">
@@ -14,7 +15,7 @@ import Nina from "@/assets/nina-heart.png";
       <div class="h-1 w-20 bg-accent rounded"></div>
     </div>
     <div
-      class="flex flex-col space-y-10 lg:flex-row justify-center items-center lg:space-x-32"
+      class="relative flex flex-col space-y-16 lg:flex-row justify-center items-center lg:space-x-32"
     >
       <Image
         width={400}
@@ -23,10 +24,16 @@ import Nina from "@/assets/nina-heart.png";
         alt="nina image"
         class="object-cover rounded-xl shadow-lg shadow-primary"
       />
+      <Image
+        width={250}
+        src={PinkCloud}
+        alt={"star"}
+        class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] z-50"
+      />
       <div
-        class="text-lg text-justify max-w-lg leading-snug text-balance text-gray-700"
+        class="relative text-lg text-justify max-w-lg leading-snug text-balance p-8 rounded-md border-2 border-accent"
       >
-        <p>
+        <p class="text-zinc-800">
           I’m so glad you’re here, and welcome to a space of healing and
           self-discovery! I’m Nina, the intuitive astrologer behind Honey Nectar
           Astrology. My approach is like drawing out the nectar of your soul’s

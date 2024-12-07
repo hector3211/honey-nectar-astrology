@@ -3,16 +3,23 @@ import { Image } from "astro:assets";
 import Morgana from "@/assets/morgana.jpeg";
 import Emma from "@/assets/emma.jpeg";
 import Brittany from "@/assets/brittney.jpeg";
+import RainbowCrystal from "@/assets/rainbow-crystal.svg";
 ---
 
-<section id="testimonials" class="my-10 text-gray-600 body-font relative">
-  <div class="container px-5 py-5 sm:py-24 mx-auto">
+<section id="testimonials" class="relative my-10 text-gray-600 body-font">
+  <div class="relative container px-5 py-5 sm:py-24 mx-auto">
     <div class="lg:w-1/2 w-full mb-6 lg:mb-20">
       <h1 class="sm:text-5xl text-2xl font-bold title-font mb-2 text-gray-900">
         Testimonials
       </h1>
       <div class="h-1 w-20 bg-primary rounded"></div>
     </div>
+    <Image
+      width={250}
+      src={RainbowCrystal}
+      alt={"star"}
+      class="absolute left-[5%] top-[2%] md:left-[50%] md:top-[10%] lg:left-[40%] lg:top-[10%] z-50"
+    />
     <div class="grid grid-cols-2 -m-4 gap-3">
       {
         [
@@ -30,6 +37,7 @@ import Brittany from "@/assets/brittney.jpeg";
             work: "Licensed Esthetician",
             src: Morgana,
             alt: "Morgana image",
+            width: 80,
           },
           {
             name: "Emma",
@@ -47,6 +55,7 @@ import Brittany from "@/assets/brittney.jpeg";
             work: "Marketing specialist",
             src: Emma,
             alt: "Emma image",
+            width: 80,
           },
           {
             name: "Brittany",
@@ -65,16 +74,18 @@ import Brittany from "@/assets/brittney.jpeg";
             work: "SalesForce Cloud Architect",
             src: Brittany,
             alt: "Brittany image",
+            width: 80,
           },
           {
-            name: "Ammy",
+            name: "Amy",
             review: `Nina weaves her healing gifts along with her psychological and spiritual wisdom and understanding of archetypes into all her astrology readings.  Book a reading with Nina if you want  explore your inner world and heal whatever is holding you back from finding more love, happiness and creative self expression in your life.  Nina is compassionate, integral and very intuitive and insightful. She'll help you feel more empowered to move forward in life in the way you want!`,
             work: "Spiritual Advisor",
             src: Brittany,
-            alt: "Ammy image",
+            alt: "Amy image",
+            width: 80,
           },
         ].map((testimonial) => (
-          <div class="col-span-1 h-full p-8 rounded-md shadow-md">
+          <div class="col-span-2 md:col-span-1 h-full p-8 rounded-md shadow-md">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -88,19 +99,14 @@ import Brittany from "@/assets/brittney.jpeg";
             </p>
 
             <span class="inline-flex items-center">
-              {testimonial.name !== "Ammy" ? (
-                <Image
-                  width={80}
-                  height={80}
-                  widths={[40, 60, 80, 100]}
-                  src={testimonial.src!!}
-                  alt={testimonial.alt}
-                  class={"rounded-xl"}
-                />
-              ) : (
-                <p class="size-[60px] text-3xl">🌹</p>
-              )}
-              <span class="flex-grow flex flex-col pl-4">
+              <Image
+                width={testimonial.width}
+                widths={[80, 100, 150]}
+                src={testimonial.src}
+                alt={testimonial.alt}
+                class={`rounded-xl`}
+              />
+              <span class={`flex-grow flex flex-col pl-4`}>
                 <span class="title-font font-medium text-gray-700">
                   {testimonial.name}
                 </span>

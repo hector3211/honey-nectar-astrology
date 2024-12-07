@@ -3,11 +3,42 @@ import { Send } from "lucide-astro";
 import { Button } from "./ui/button";
 import { Image } from "astro:assets";
 import HoneyHeroLogo from "../assets/honey_logo.png";
+import AquaCard from "@/assets/aquarius-card.svg";
+import GeminiCard from "@/assets/gemini-card.svg";
+import CancerCard from "@/assets/cancer-card.svg";
+import ScorpioCard from "@/assets/scorpio-card.svg";
 ---
 
-<div class="relative z-50 px-6 pt-5 sm:pt-20 min-h-[calc(100vh-10rem)]">
+<div
+  class="relative z-50 px-6 pt-5 sm:pt-20 min-h-[cal(100vh-30rem)] xl:min-h-[calc(100vh-10rem)]"
+>
+  <Image
+    width={350}
+    src={AquaCard}
+    alt={"aqua card"}
+    class={"size-60 lg:w-[350px] absolute left-0 top-[2%] md:left-[25%] md:top-[10%] xl:left-[28%] lg:top-[5%] rotate-12"}
+  />
+  <Image
+    width={450}
+    widths={[150, 250, 450]}
+    src={GeminiCard}
+    alt={"aqua card"}
+    class={"size-64 lg:w-[450px] absolute top-[35%] -left-8 md:left-5 lg:left-[15%] xl:left-[28%] md:top-[30%] -rotate-12"}
+  />
+  <Image
+    width={350}
+    src={CancerCard}
+    alt={"aqua card"}
+    class={"size-60 lg:w-[350px] right-0 top-[0%] absolute lg:right-[15%] xl:right-[30%] sm:top-[8%] "}
+  />
+  <Image
+    width={450}
+    src={ScorpioCard}
+    alt={"aqua card"}
+    class={"size-56 lg:w-[450px] absolute right-0 top-[39%] md:right-[10%] xl:right-[28%] md:top-[30%] rotate-12"}
+  />
   <div
-    class="hidden sm:absolute -top-40 -z-0 transform-gpu overflow-hidden blur-3xl sm:left-60 sm:-top-80"
+    class="hidden md:block absolute -top-40 -z-0 transform-gpu overflow-hidden blur-3xl sm:-top-80 md:-left-60 lg:left-10 xl:left-56"
     aria-hidden="true"
   >
     <div
@@ -43,7 +74,7 @@ import HoneyHeroLogo from "../assets/honey_logo.png";
     </div>
   </div>
   <div
-    class="hidden sm:absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)] sm:left-0"
+    class="hidden md:block absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)"
     aria-hidden="true"
   >
     <div

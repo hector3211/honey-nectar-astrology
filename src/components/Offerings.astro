@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -13,6 +12,7 @@ import { Sparkles } from "lucide-react";
 import FirstPackage from "@/assets/first-package.jpg";
 import SecondPackage from "@/assets/second-package.jpg";
 import ThirdPackage from "@/assets/third-package.jpg";
+import GoldCloud from "@/assets/gold-cloud.svg";
 ---
 
 <section id="packages" class="relative my-20 body-font text-zinc-600">
@@ -26,7 +26,7 @@ import ThirdPackage from "@/assets/third-package.jpg";
     >
     </div>
   </div>
-  <div class="container px-5 py-5 sm:py-24 mx-auto">
+  <div class="relative container px-5 py-5 sm:py-24 mx-auto">
     <div class="flex flex-wrap w-full mb-20">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
         <h1
@@ -36,8 +36,16 @@ import ThirdPackage from "@/assets/third-package.jpg";
         </h1>
         <div class="h-1 w-20 bg-accent rounded"></div>
       </div>
+      <Image
+        width={250}
+        src={GoldCloud}
+        alt={"star"}
+        class="absolute left-[5%] top-[2%] md:left-[50%] md:top-[10%] lg:left-[40%] lg:top-[10%] z-50 scale-x-[-1]"
+      />
     </div>
-    <div class="flex flex-col space-y-8 items-center lg:flex-row lg:space-x-5">
+    <div
+      class="flex flex-col space-y-8 items-center lg:flex-row lg:space-x-5 lg:space-y-0"
+    >
       {
         [
           {
@@ -82,22 +90,21 @@ import ThirdPackage from "@/assets/third-package.jpg";
             dataPackage: "soul-essence-transformation",
           },
         ].map((pkg) => (
-          <Card className="max-w-[450px]" key={pkg.key}>
+          <Card key={pkg.key}>
             <CardHeader>
               <CardTitle>{pkg.title}</CardTitle>
-              <CardDescription className="leading-relaxed text-base text-justify">
-                {pkg.description}
-              </CardDescription>
             </CardHeader>
-            <CardContent className="container">
+            <CardContent className="container h-[30rem]">
               <Image
                 width={200}
-                height={200}
                 widths={[150, 250, 400, 600]}
-                class={`h-56 rounded container ${pkg.title === "Honeycomb Clarity Session" ? "object-center" : "object-bottom"} object-cover`}
+                class={`h-56 rounded w-full ${pkg.title === "Honeycomb Clarity Session" ? "object-center" : "object-bottom"} object-cover`}
                 src={pkg.src}
                 alt={pkg.alt}
               />
+              <span class="leading-relaxed text-base text-justify">
+                {pkg.description}
+              </span>
             </CardContent>
             <CardFooter>
               <Button className="book-button" data-package={pkg.dataPackage}>
