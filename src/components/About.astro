@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Nina from "@/assets/nina-heart.png";
-import PinkCloud from "@/assets/pink-cloud.svg";
 ---
 
 <section id="about" class="my-20 text-zinc-600 body-font scroll-mt-52">
@@ -21,13 +20,13 @@ import PinkCloud from "@/assets/pink-cloud.svg";
         width={400}
         height={400}
         src={Nina}
-        alt="nina image"
+        alt="nina about image"
         class="object-cover rounded-xl shadow-lg shadow-primary"
       />
-      <Image
+      <img
         width={250}
-        src={PinkCloud}
-        alt={"star"}
+        src={"/pink-cloud.svg"}
+        alt={"pink cloud"}
         class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] lg:-top-[5%] z-50"
       />
       <div

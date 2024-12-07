@@ -1,19 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import ContactForm from "@/components/ContactForm.tsx";
-import Crystal from "@/assets/crystal.svg";
-import PinkCloud from "@/assets/pink-cloud.svg";
-import GoldCloud from "@/assets/gold-cloud.svg";
-import GeminiCard from "@/assets/gemini-card.svg";
 ---
 
 <section id="contact" class="relative text-zinc-900 body-font py-20">
-  <Image
-    width={450}
-    src={GeminiCard}
-    alt={"star"}
-    class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] lg:right-[10%] lg:top-[45%] z-50 rotate-12"
-  />
   <div class="container px-5 py-5 sm:py-24 mx-auto">
     <div class="lg:w-1/2 w-full mb-6 lg:mb-20">
       <h1 class="sm:text-5xl text-2xl font-bold title-font mb-2">Contact</h1>
@@ -27,21 +16,21 @@ import GeminiCard from "@/assets/gemini-card.svg";
         Reach out to me with any questions or inquiries.
       </p>
     </div>
-    <Image
+    <img
       width={250}
-      src={PinkCloud}
+      src={"/pink-cloud.svg"}
       alt={"star"}
       class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] lg:right-[25%] lg:-top-[5%] z-50"
     />
-    <Image
+    <img
       width={250}
-      src={GoldCloud}
+      src={"/gold-cloud.svg"}
       alt={"star"}
       class="absolute top-[45%] left-[0%] md:left-[12%] md:-top-[3%] lg:left-[15%] 2xl:left-[20%] lg:top-[25%] z-50"
     />
-    <Image
+    <img
       width={450}
-      src={Crystal}
+      src={"/crystal.svg"}
       alt={"star"}
       class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] lg:right-[0%] lg:top-[24%] 2xl:right-[25%] 2xl:top-[24%] z-50"
     />
