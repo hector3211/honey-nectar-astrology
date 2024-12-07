@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import Morgana from "@/assets/morgana.jpeg";
 import Emma from "@/assets/emma.jpeg";
 import Brittany from "@/assets/brittney.jpeg";
-import RainbowCrystal from "@/assets/rainbow-crystal.svg";
 ---
 
 <section id="testimonials" class="relative my-10 text-gray-600 body-font">
@@ -14,12 +13,6 @@ import RainbowCrystal from "@/assets/rainbow-crystal.svg";
       </h1>
       <div class="h-1 w-20 bg-primary rounded"></div>
     </div>
-    <Image
-      width={250}
-      src={RainbowCrystal}
-      alt={"star"}
-      class="absolute left-[5%] top-[2%] md:left-[50%] md:top-[10%] lg:left-[40%] lg:top-[10%] z-50"
-    />
     <div class="grid grid-cols-2 -m-4 gap-3">
       {
         [
@@ -98,14 +91,20 @@ import RainbowCrystal from "@/assets/rainbow-crystal.svg";
               {testimonial.review}
             </p>
 
-            <span class="inline-flex items-center">
-              <Image
-                width={testimonial.width}
-                widths={[80, 100, 150]}
-                src={testimonial.src}
-                alt={testimonial.alt}
-                class={`rounded-xl`}
-              />
+            <span
+              class={`inline-flex items-center ${testimonial.name === "Amy" && "pt-12"}`}
+            >
+              {testimonial.name !== "Amy" ? (
+                <Image
+                  width={testimonial.width}
+                  widths={[80, 100, 150]}
+                  src={testimonial.src}
+                  alt={testimonial.alt}
+                  class={`rounded-xl`}
+                />
+              ) : (
+                <p class="text-4xl ">🌹</p>
+              )}
               <span class={`flex-grow flex flex-col pl-4`}>
                 <span class="title-font font-medium text-gray-700">
                   {testimonial.name}
