@@ -9,7 +9,6 @@ export default defineConfig({
   output: "server",
   adapter: vercel({
     imageService: true,
-    devImageService: "sharp",
   }),
   integrations: [
     tailwind({
