@@ -12,7 +12,7 @@ import { Sparkles } from "lucide-react";
 import FirstPackage from "@/assets/first-package.jpg";
 import SecondPackage from "@/assets/second-package.jpg";
 import ThirdPackage from "@/assets/third-package.jpg";
-import GoldCloud from "@/assets/gold-cloud.svg";
+import GeminiCard from "@/assets/gemini-card.svg";
 ---
 
 <section id="packages" class="relative my-20 body-font text-zinc-600">
@@ -37,10 +37,10 @@ import GoldCloud from "@/assets/gold-cloud.svg";
         <div class="h-1 w-20 bg-accent rounded"></div>
       </div>
       <Image
-        width={250}
-        src={GoldCloud}
+        width={450}
+        src={GeminiCard}
         alt={"star"}
-        class="absolute left-[5%] top-[2%] md:left-[50%] md:top-[10%] lg:left-[40%] lg:top-[10%] z-50 scale-x-[-1]"
+        class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] lg:right-[0%] lg:-top-[5%] rotate-12 z-50"
       />
     </div>
     <div
@@ -127,7 +127,7 @@ import GoldCloud from "@/assets/gold-cloud.svg";
       button.addEventListener("click", () => {
         const packageName = button.getAttribute("data-package");
         document.cookie = `selectedPackage=${packageName}; path=/; SameSite=Strict; Secure`;
-        window.location.reload();
+        // window.location.reload();
       });
     });
   });
