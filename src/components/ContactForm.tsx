@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,34 +11,18 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { Loader2, Send } from "lucide-react";
-
-function getCookie(name: string): string | null {
-  const cookies = document.cookie.split("; ");
-
-  for (const cookie of cookies) {
-    const [cookieName, cookieValue] = cookie.split("=");
-
-    if (cookieName === name) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-
-  return null;
-}
-
-// Utility function to set cookie
-function setCookie(name: string, value: string, days = 7) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Strict; Secure`;
-}
+import { useStore } from "@nanostores/react";
+import { selectedPackage, setPackage } from "../stateStore";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [selectedPackage, setSelectedPackage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
+  // nano state
+  const $package = useStore(selectedPackage);
+  console.log("Current Package:", $package);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -46,6 +30,7 @@ export default function ContactForm() {
     setResponseMessage(""); // Clear previous messages
 
     try {
+      setPackage($package);
       const formData = new FormData(e.target as HTMLFormElement);
       const response = await fetch("/api/offering", {
         method: "POST",
@@ -61,7 +46,7 @@ export default function ContactForm() {
         setName("");
         setEmail("");
         setMessage("");
-        setSelectedPackage("");
+        setPackage("");
         setResponseMessage(data.message);
         toast.success(data.message);
       }
@@ -74,21 +59,6 @@ export default function ContactForm() {
       setIsSubmitting(false);
     }
   }
-
-  useEffect(() => {
-    const packageFromCookie = getCookie("selectedPackage");
-    if (packageFromCookie) {
-      setSelectedPackage(packageFromCookie);
-    }
-  }, []);
-
-  useEffect(() => {
-    const packageFromCookie = getCookie("selectedPackage");
-    if (packageFromCookie !== selectedPackage) {
-      setCookie("selectedPackage", selectedPackage);
-      return;
-    }
-  }, [selectedPackage, setSelectedPackage]);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full p-3">
@@ -159,8 +129,10 @@ export default function ContactForm() {
           Package
         </label>
         <Select
-          value={selectedPackage}
-          onValueChange={setSelectedPackage}
+          value={$package}
+          onValueChange={(value) => {
+            setPackage(value);
+          }}
           name="selectedPackage"
         >
           <SelectTrigger id="selectedPackage">
@@ -180,9 +152,10 @@ export default function ContactForm() {
         </Select>
       </div>
       <Button
-        type="submit"
-        className="w-full lg:text-lg"
         disabled={isSubmitting}
+        type="submit"
+        variant={"secondary"}
+        className="w-full lg:h-12"
       >
         {isSubmitting ? <Loader2 className="animate-spin" /> : <Send />}
         {isSubmitting ? "Submitting..." : "Submit"}

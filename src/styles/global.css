@@ -3,6 +3,36 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --radius: 0.5rem
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 360deg;
+    inherits: false;
+  }
+
+  .hero-join-button {
+    background: linear-gradient(
+      var(--gradient-angle),
+      #bf725e,
+      /* primary */ #8b5dff,
+      /* secondary */ #f9be33,
+      /* accent */ #bf725e 30%,
+      /* loop back to primary for smooth transitions */ #8b5dff 60%
+        /* secondary highlight */
+    );
+    animation: gradient-rotate 5s linear infinite;
+  }
+
+  @keyframes gradient-rotate {
+    from {
+      --gradient-angle: 0deg;
+    }
+    to {
+      --gradient-angle: 360deg;
+    }
   }
 }

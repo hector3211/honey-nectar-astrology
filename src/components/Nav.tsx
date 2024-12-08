@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Logo from "@/assets/honey-hero.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState<true | false>(false);
@@ -25,12 +26,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="/" className="flex items-center flex-shrink-0">
-              <img
-                width={40}
-                height={40}
-                src={"/honey_logo.png"}
-                alt="honey-logo"
-              />
+              <img width={40} src={Logo.src} alt={"nav logo"} className="" />
               <h3 className="font-bold text-xl md:text-2xl  bg-gradient-to-br from-primary to-secondary  text-transparent bg-clip-text">
                 Honey Nectar Astrology
               </h3>

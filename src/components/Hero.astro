@@ -2,7 +2,7 @@
 import { Send } from "lucide-astro";
 import { Button } from "./ui/button";
 import { Image } from "astro:assets";
-import HoneyHeroLogo from "../assets/honey_logo.png";
+import HoneyHeroLogo from "../assets/honey-hero.png";
 import AquaCard from "@/assets/aquarius-card.svg";
 import GeminiCard from "@/assets/gemini-card.svg";
 import CancerCard from "@/assets/cancer-card.svg";
@@ -14,28 +14,31 @@ import ScorpioCard from "@/assets/scorpio-card.svg";
 >
   <Image
     width={350}
+    widths={[200, 250, 450]}
     src={AquaCard}
     alt={"aqua card"}
-    class={"size-60 lg:w-[350px] absolute left-0 top-[2%] md:left-[25%] md:top-[10%] lg:left-[0%] xl:left-[15%] 2xl:left-[28%] lg:top-[5%] rotate-12"}
+    class={"w-[200px] lg:w-[350px] absolute -left-[10%] -rotate-12 top-[10%] md:left-[10%] md:top-[10%] lg:left-[10%] xl:left-[15%] 2xl:left-[28%] lg:top-[5%] md:rotate-12"}
   />
   <Image
     width={450}
-    widths={[150, 250, 450]}
+    widths={[250, 450]}
     src={GeminiCard}
-    alt={"aqua card"}
-    class={"size-64 lg:w-[450px] absolute top-[35%] -left-8 md:left-5 lg:left-[15%] xl:left-[17%] 2xl:left-[28%] md:top-[30%] -rotate-12"}
+    alt={"Gemini card"}
+    class={"w-[250px] lg:w-[450px] absolute top-[43%] -left-[12%] md:left-5 lg:left-[10%] xl:left-[17%] 2xl:left-[28%] md:top-[30%] -rotate-12"}
   />
   <Image
     width={350}
+    widths={[200, 250, 450]}
     src={CancerCard}
-    alt={"aqua card"}
-    class={"size-60 lg:w-[350px] right-0 top-[0%] absolute lg:right-[15%] xl:right-[20%] 2xl:right-[30%] sm:top-[8%] "}
+    alt={"Cancer card"}
+    class={"w-[200px] lg:w-[350px] right-[12%] top-[2%] absolute lg:right-[15%] xl:right-[20%] 2xl:right-[30%] sm:top-[8%] "}
   />
   <Image
     width={450}
+    widths={[200, 450]}
     src={ScorpioCard}
-    alt={"aqua card"}
-    class={"size-56 lg:w-[450px] absolute right-0 top-[39%] md:right-[10%] xl:top-[35%] xl:right-[18%] 2xl:right-[28%] 2xl:top-[34%] md:top-[30%] rotate-12"}
+    alt={"Scorpio card"}
+    class={"w-[200px] lg:w-[450px] absolute right-5 top-[43%] md:right-[10%] xl:top-[35%] xl:right-[18%] 2xl:right-[28%] 2xl:top-[34%] md:top-[30%] rotate-12"}
   />
   <div
     class="hidden md:block absolute -top-40 -z-0 transform-gpu overflow-hidden blur-3xl sm:-top-80 md:-left-60 lg:left-10 xl:left-0 2xl:left-56"
@@ -49,7 +52,7 @@ import ScorpioCard from "@/assets/scorpio-card.svg";
   </div>
   <div class="mx-auto max-w-2xl">
     <div class="flex justify-center">
-      <Image width={300} src={HoneyHeroLogo} alt={"honey-hero-logo"} />
+      <Image width={400} src={HoneyHeroLogo} alt={"honey-hero-logo"} />
     </div>
     <div class="text-center">
       <h1
@@ -65,9 +68,15 @@ import ScorpioCard from "@/assets/scorpio-card.svg";
       </p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <a href="#contact">
-          <Button variant={"secondary"} className="w-40 h-12 text-lg">
-            <Send className="size-6" />
-            Contact
+          <Button
+            className="hero-join-button group w-56 h-12 relative overflow-hidden p-[1.5px] font-bold transition-all duration-300 hover:bg-transparent hover:shadow-[0_0_2rem_-0.5rem_#F9BE33] dark:hidden md:mr-0"
+          >
+            <span
+              class="text-lg inline-flex h-full w-full justify-center items-center gap-3 rounded-md backdrop-blur-2xl px-4 py-2 text-foreground transition-all duration-300"
+            >
+              <Send className="size-8" />
+              <p>Contact</p>
+            </span>
           </Button>
         </a>
       </div>

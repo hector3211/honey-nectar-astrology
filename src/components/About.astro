@@ -3,7 +3,13 @@ import { Image } from "astro:assets";
 import Nina from "@/assets/nina-heart.png";
 ---
 
-<section id="about" class="my-20 text-zinc-600 body-font scroll-mt-52">
+<section id="about" class="relative my-20 text-zinc-600 body-font scroll-mt-52">
+  <img
+    width={250}
+    src={"/pink-planet.png"}
+    alt="pink planet"
+    class={"hidden md:block absolute right-5 -top-[15%] md:left-[10%] md:top-[30%] xl:top-[35%] xl:left-[18%] 2xl:left-[45%] 2xl:-top-[25%] rotate-12"}
+  />
   <div class="container px-5 py-5 sm:py-24 mx-auto">
     <div class="w-full mb-6 lg:mb-20">
       <h1
@@ -27,7 +33,7 @@ import Nina from "@/assets/nina-heart.png";
         width={250}
         src={"/pink-cloud.svg"}
         alt={"pink cloud"}
-        class="absolute top-[45%] right-[0%] md:right-[12%] md:-top-[3%] lg:-top-[15%] lg:right-[15%] z-50"
+        class="hidden md:block absolute -top-[10%] right-[0%] md:right-[12%] md:-top-[3%] lg:-top-[15%] lg:right-[15%] z-50"
       />
       <div
         class="relative text-lg text-justify max-w-lg leading-snug text-balance"

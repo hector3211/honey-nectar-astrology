@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel";
@@ -14,5 +14,16 @@ export default defineConfig({
     }),
     react(),
   ],
+  env: {
+    schema: {
+      SECRET_PLUNK_API_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      SECRET_HONEY_NECTAR_ASTROLOGY_EMAIL: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+    },
+  },
 });
-
