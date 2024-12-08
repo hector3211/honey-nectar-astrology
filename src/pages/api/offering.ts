@@ -16,9 +16,9 @@ export const POST: APIRoute = async ({ request }) => {
   const email = data.get("email");
   const message = data.get("message");
   const selectedPackage = data.get("selectedPackage");
-  console.log(
-    `name: ${name} email: ${email} message: ${message} package: ${selectedPackage}\n`,
-  );
+  // console.log(
+  //   `name: ${name} email: ${email} message: ${message} package: ${selectedPackage}\n`,
+  // );
   // Validate the data - you'll probably want to do more than this
   if (!name || !email || !message || !selectedPackage) {
     return new Response(
@@ -30,8 +30,8 @@ export const POST: APIRoute = async ({ request }) => {
   }
   const key = import.meta.env.SECRET_PLUNK_API_KEY;
   const businessEmail = import.meta.env.SECRET_HONEY_NECTAR_ASTROLOGY_EMAIL;
-  console.log(`key: ${key}`);
-  console.log(`email: ${businessEmail}`);
+  // console.log(`key: ${key}`);
+  // console.log(`email: ${businessEmail}`);
   if (!key || !businessEmail) {
     return new Response(
       JSON.stringify({
