@@ -22,7 +22,7 @@ export default function ContactForm() {
   const [responseMessage, setResponseMessage] = useState("");
   // nano state
   const $package = useStore(selectedPackage);
-  console.log("Current Package:", $package);
+  // console.log("Current Package:", $package);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import "@/styles/global.css";
+import HolidaySalesBanner from "@/components/Banner.tsx";
 import NavBar from "@/components/Nav.tsx";
 import Footer from "@/components/Footer.astro";
 import { Toaster } from "@/components/ui/sonner";
@@ -21,8 +22,11 @@ import { Toaster } from "@/components/ui/sonner";
     <title>{title}</title>
   </head>
   <body class="max-w-full mx-auto min-h-screen">
+    <HolidaySalesBanner client:load />
     <NavBar client:load />
-    <slot />
+    <main class="mt-16 2xl:mt-20">
+      <slot />
+    </main>
     <Toaster client:load />
     <Footer />
   </body>

@@ -2,7 +2,7 @@
 import { Send } from "lucide-astro";
 import { Button } from "./ui/button";
 import { Image } from "astro:assets";
-import HoneyHeroLogo from "../assets/honey-hero.png";
+import HoneyHero from "@/assets/new-honey-hero.png";
 import AquaCard from "@/assets/aquarius-card.svg";
 import GeminiCard from "@/assets/gemini-card.svg";
 import CancerCard from "@/assets/cancer-card.svg";
@@ -10,7 +10,7 @@ import ScorpioCard from "@/assets/scorpio-card.svg";
 ---
 
 <div
-  class="relative z-50 px-6 pt-5 sm:pt-20 min-h-[cal(100vh-30rem)] 2xl:min-h-[calc(100vh-10rem)]"
+  class="relative z-40 pt-5 sm:pt-20 min-h-[cal(100vh-30rem)] 2xl:min-h-[calc(100vh-10rem)]"
 >
   <Image
     width={350}
@@ -41,7 +41,7 @@ import ScorpioCard from "@/assets/scorpio-card.svg";
     class={"w-[200px] lg:w-[450px] absolute right-5 top-[43%] md:right-[10%] xl:top-[35%] xl:right-[18%] 2xl:right-[28%] 2xl:top-[34%] md:top-[30%] rotate-12"}
   />
   <div
-    class="hidden md:block absolute -top-40 -z-0 transform-gpu overflow-hidden blur-3xl sm:-top-80 md:-left-60 lg:left-10 xl:left-0 2xl:left-56"
+    class="hidden md:block absolute -top-40 -z-0 transform-gpu overflow-hidden blur-3xl sm:-top-80 md:-left-60 2xl:left-56"
     aria-hidden="true"
   >
     <div
@@ -52,7 +52,7 @@ import ScorpioCard from "@/assets/scorpio-card.svg";
   </div>
   <div class="mx-auto max-w-2xl">
     <div class="flex justify-center">
-      <Image width={400} src={HoneyHeroLogo} alt={"honey-hero-logo"} />
+      <Image width={400} src={HoneyHero} alt={"honey-hero-logo"} />
     </div>
     <div class="text-center">
       <h1

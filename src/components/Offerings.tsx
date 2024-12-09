@@ -16,8 +16,9 @@ import { setPackage } from "../stateStore";
 export default function Offerings() {
   function handleClick(value: string) {
     setPackage(value);
-    const element = document.getElementById("contact");
-    element?.scrollIntoView({ behavior: "instant", block: "start" });
+    window.location.href = "#contact";
+    // const element = document.getElementById("contact");
+    // element?.scrollIntoView({ behavior: "instant", block: "start" });
   }
   return (
     <section id="packages" className="relative my-20 body-font text-zinc-600">
@@ -45,13 +46,13 @@ export default function Offerings() {
             width={250}
             src={"/gold-cloud.svg"}
             alt={"star"}
-            className="absolute top-[99%] left-[0%] md:left-[12%] md:-top-[3%] lg:left-[0%] lg:-top-[5%] z-50"
+            className="absolute top-[99%] left-[0%] md:left-[12%] md:-top-[3%] lg:left-[0%] lg:-top-[5%] z-20"
           />
           <img
             width={450}
             src={GeminiCard.src}
             alt={"star"}
-            className="absolute w-[250px] md:w-[450px] -top-[3%] right-[5%] md:right-[12%] md:-top-[3%] lg:right-[0%] lg:-top-[5%] rotate-12 z-50"
+            className="absolute w-[250px] md:w-[450px] -top-[3%] right-[5%] md:right-[12%] md:-top-[3%] lg:right-[0%] lg:-top-[5%] rotate-12 zwindow.pageYOffset-20"
           />
         </div>
         <div className="flex flex-col space-y-8 items-center lg:flex-row lg:space-x-5 lg:space-y-0">
