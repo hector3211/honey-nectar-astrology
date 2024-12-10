@@ -155,10 +155,10 @@ export default function ContactForm() {
         disabled={isSubmitting}
         type="submit"
         variant={"secondary"}
-        className="w-full lg:h-12"
+        className="text-zinc-50 flex justify-end ml-auto"
       >
         {isSubmitting ? <Loader2 className="animate-spin" /> : <Send />}
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? "Booking" : "Book Now"}
       </Button>
     </form>
   );
